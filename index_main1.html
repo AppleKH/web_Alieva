@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача-опрос</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		header {
+			margin: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			background: #87CEEB;
+		}
+		h1 {
+			font-family: Courier New;
+		}
+		p {
+			padding-top: 40px;
+			padding-bottom: 20px;
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+		form {
+			align-content: center;
+		}
+		input, textarea {
+			margin-bottom: 20px;
+			width: 300px;
+			box-sizing: border-box;
+			border: 1px solid #999;
+		}
+		input: : -webkit-input-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		input: : -moz-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		input: -moz-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		input: -ms-input-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		textarea: : -webkit-textarea-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		textarea: : -moz-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		textarea: -moz-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		textarea: -ms-textarea-placeholder {
+			color: black;
+			font-style: italic;
+		}
+		input {
+			margin-top: 20px;
+		}
+		textarea: {
+			vertical-align: top;
+			height: 5em;
+		}
+		input[type="text"]:focus {
+			box-shadow: 0 0 10px rgba(98, 98, 206, 0.5);
+		}
+		input[type="email"]:focus {
+			box-shadow: 0 0 10px rgba(98, 98, 206, 0.5);
+		}
+		textarea:focus {
+			box-shadow: 0 0 10px rgba(98, 98, 206, 0.5);
+		}		
+		input[type="checkbox"] {
+			width: 20px;
+			vertical-align: baseline;
+			background-color: initial;
+			cursor: default;
+			appearance:  auto;
+			box-sizing: border-box;
+			margin: 3px 3px 3px 4px;
+			padding: initial;
+			border: initial;
+		}
+		input[type="radio"] {
+			width: 20px;
+			margin: 3px 3px 3px 4px;
+		}
+		label {
+			cursor: default;
+		}
+		button {
+			margin-left: .5em;
+			background: #87CEEB;
+			margin-bottom: 20px;
+
+		}
+		.parent {
+			margin: 0;
+			background: #87CEEB;
+		}
+		.child {
+			border: 1px solid #87CEEB;
+			margin-right: 100px;
+			margin-left: 100px;
+			margin-top: 0px;
+			background: #FFFFFF;
+		}
+	</style>
+</head>
+<body>
+	<header><h1 align="center">Анкета</h1></header>
+	<div class="parent" align="center">
+		<div class="child">
+			<p align="center">
+				<font size="4" face="Courier New"><b>Расскажите нам немного о себе, чтобы мы понимали, для кого создаём наши web-страницы.</b>
+				</font>
+			</p>
+			<form name="anketa" method="post" action="#" content="text/plane">
+				<table cellspacing="10" cellpadding="5">
+					<tr>	
+						<td align="right" width="100" size="3" face="Courier New"><b>Имя:</b></td>
+						<td><input type="text" name="firstname" placeholder="Введите Ваше имя" maxlength="50" size="20" required></td>
+					</tr>
+					<tr>
+						<td align="right" width="100" size="3" face="Courier New"><b>Фамилия:</b></td>
+						<td><input type="text" name="lastname" placeholder="Введите Вашу фамилию" maxlength="50" size="20" required></td>
+					</tr>
+					<tr>
+						<td align="right" width="100" size="3" face="Courier New"><b>Почта:</b></td>
+						<td><input type="email" name="email" placeholder="Введите Вашу почту" maxlength="50" size="20" required></td>
+					</tr>
+					<tr>
+						<td align="right" width="100" size="3" face="Courier New"><b>Пол:</b></td>
+						<td name="sex">	
+							<label><input type="radio" name="sex" value="man">Мужчина</label><br>
+							<label><input type="radio" name="sex" value="woman">Женщина</label><br>
+							<label><input type="radio" name="sex" value="somebody" checked>Кто-то</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="100" size="3" face="Courier New"><b>Какой ваш возраст?</b></td>
+						<td>
+							<select name="age">
+								<option value="11-17">11-17</option>
+								<option value="18-24">18-24</option>
+								<option value="25-35">25-35</option>
+								<option value="36-45">36-45</option>
+								<option value="46-65">46-65</option>
+								<option value="66-86">66-86</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="100" size="3" face="Courier New"><b>Какие фильмы вы предпочитаете смотреть?</b></td>
+						<td name="film">
+							<input type="checkbox" name="finction" id="finction" value="yes">
+							<label for="finction">фантастику</label><br>
+							<input type="checkbox" name="thriller" id="thriller" value="yes">
+							<label for="thriller">боевики</label><br>
+							<input type="checkbox" name="adventure" id="adventure" value="yes">
+							<label for="adventure">приключения</label><br>
+							<input type="checkbox" name="melodrama" id="melodrama" value="yes">
+							<label for="melodrama">мелодрамы</label><br>
+							<input type="checkbox" name="documentary" id="documentary" value="yes">
+							<label for="documentary">документальные</label><br>
+							<input type="checkbox" name="horror" id="horror" value="yes">
+							<label for="horror">ужастики</label><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="100" size="3" face="Courier New"><b>Расскажите немного ещё о своих интересах:</b></td>
+						<td><textarea id="msg" name="msg" cols="35" rows="8" placeholder="Напишите здесь..." required></textarea></td>
+					</tr>
+				</table>
+				<tr align="center">
+						<td align="center"><button type="submit" name="submit" value="Отправить" onclick="alert('Вы отправили, только никто не получит письмо! Ура!')">Отправить</button></td>
+				</tr>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
