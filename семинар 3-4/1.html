@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Задача 1</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+			margin: 10;
+			font-family: Verdana, Arial, sans-serif;
+			font-size: 16px;
+		}
+		h1 {
+			margin-bottom: 50px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 22px;
+		}
+		input {
+			display: inline-block;
+			margin: 20px auto;
+			border: 2px solid #eee;
+			padding: 10px 20px;
+			font-family: Verdana, Arial, sans-serif;
+			font-size: 16px;
+		}
+		.color {
+			background-color: #9400d3;
+		}
+		.container {
+			background-color: #9932cc;
+		}
+		.tdItem {
+			text-align: left;
+			padding: 10px;
+			cursor: default;
+			border-radius: 7px;
+		}
+		.tdItem:hover {
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body class="color">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>Задачи по важности:</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<h2 class="todo__caption">Первые:</h2>
+				<div id="tdl1App">
+					<input type="text" class="form-control" placeholder="Новая задача">
+					<div class="tdl1Div">
+						<ul class="List list-unstyled">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<h2 class="todo__caption">Вторые:</h2>
+				<div id="tdl2App">
+					<input type="text" class="form-control" placeholder="Новая задача">
+					<div class="tdl2Div">
+						<ul class="List list-unstyled">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<h2 class="todo__caption">Третьи:</h2>
+				<div id="tdl3App">
+					<input type="text" class="form-control" placeholder="Новая задача">
+					<div class="tdl3Div">
+						<ul class="List list-unstyled">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+				<h2 class="todo__caption">Заметки:</h2>
+				<div id="tdl3App">
+					<input type="text" class="form-control" placeholder="Новая задача">
+					<div class="tdl3Div">
+						<ul class="List list-unstyled">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <script>
+    	var List1 = $('#tdl1App ul');
+    	var Mask1 = 'tdl1_';
+    	var List2 = $('#tdl2App ul');
+    	var Mask2 = 'tdl2_';
+    	var List3 = $('#tdl3App ul');
+    	var Mask3 = 'tdl3_';
+    	var List4 = $('#tdl4App ul');
+    	var Mask4 = 'tdl4_';
+    	function showTasks() {
+    		var Storage_size = localStorage.length;
+    		if (Storage_size > 0) {
+    			for (var i = 0; i < Storage_size; i++) {
+    				var key = localStorage.key(i);
+    				if (key.indexOf(Mask1) == 0) {
+    					$('<li></li>').addClass('tdItem')
+    					.attr('data-itemid', key)
+              			.text(localStorage.getItem(key))
+              			.appendTo(List1);
+    				}
+    				if (key.indexOf(Mask2) == 0) {
+    					$('<li></li>').addClass('tdItem')
+              			.attr('data-itemid', key)
+              			.text(localStorage.getItem(key))
+              			.appendTo(List2);
+    				}
+    				if (key.indexOf(Mask3) == 0) {
+    					$('<li></li>').addClass('tdItem')
+    					.attr('data-itemid', key)
+              			.text(localStorage.getItem(key))
+              			.appendTo(List3);
+    				}
+    				if (key.indexOf(Mask4) == 0) {
+    					$('<li></li>').addClass('tdItem')
+              				.attr('data-itemid', key)
+              				.text(localStorage.getItem(key))
+              				.appendTo(List4);
+    				}
+    			}
+    		}
+    	}
+    	$('#tdl1App input').on('keydown', function (e) {
+    		if (e.keyCode != 13) return;
+      		var str = e.target.value;
+      		e.target.value = "";
+      		if (str.length > 0) {
+        		var number_Id_1 = 0;
+        		List1.children().each(function (index, el) {
+        			var element_Id_1 = $(el).attr('data-itemid').slice(5);
+        			if (element_Id_1 > number_Id_1)
+            			number_Id_1 = element_Id_1;
+        		})
+        		number_Id_1++;
+        		localStorage.setItem(Mask1 + number_Id_1, str);
+        		$('<li></li>').addClass('tdItem')
+          			.attr('data-itemid', Mask1 + number_Id_1)
+          			.text(str).appendTo(List1);
+        	}
+    	});
+    	$('#tdl2App input').on('keydown', function (e) {
+    		if (e.keyCode != 13) return;
+      		var str = e.target.value;
+      		e.target.value = "";
+      		if (str.length > 0) {
+      			var number_Id_2 = 0;
+        		List2.children().each(function (index, el) {
+        			var element_Id_2 = $(el).attr('data-itemid').slice(5);
+          			if (element_Id_2 > number_Id_2)
+            			number_Id_2 = element_Id_2;
+        		})
+        		number_Id_2++;
+        		localStorage.setItem(Mask2 + number_Id_2, str);
+        		$('<li></li>').addClass('tdItem')
+          			.attr('data-itemid', Mask2 + number_Id_2)
+          			.text(str).appendTo(List2);
+      		}
+    	});
+    	$('#tdl3App input').on('keydown', function (e) {
+      		if (e.keyCode != 13) return;
+      		var str = e.target.value;
+      		e.target.value = "";
+      		if (str.length > 0) {
+       			var number_Id_3 = 0;
+        		List3.children().each(function (index, el) {
+        			var element_Id_3 = $(el).attr('data-itemid').slice(5);
+          			if (element_Id_3 > number_Id_3)
+            			number_Id_3 = element_Id_3;
+        		})
+        		number_Id_3++;
+        		localStorage.setItem(Mask3 + number_Id_3, str);
+        		$('<li></li>').addClass('tdItem')
+          			.attr('data-itemid', Mask3 + number_Id_3)
+          			.text(str).appendTo(List3);
+          	}
+      	});
+      	$('#tdl4App input').on('keydown', function (e) {
+      		if (e.keyCode != 13) return;
+      		var str = e.target.value;
+      		e.target.value = "";
+      		if (str.length > 0) {
+      			var number_Id_4 = 0;
+        		List4.children().each(function (index, el) {
+        			var element_Id_4 = $(el).attr('data-itemid').slice(5);
+          			if (element_Id_4 > number_Id_4)
+            			number_Id_4 = element_Id_4;
+        		})
+        		number_Id_4++;
+        		localStorage.setItem(Mask4 + number_Id_4, str);
+        		$('<li></li>').addClass('tdItem')
+          			.attr('data-itemid', Mask4 + number_Id_4)
+          			.text(str).appendTo(List4);
+      		}
+      	});
+      	$(document).on('click', '.tdItem', function (e) {
+      		var jet = $(e.target);
+      		localStorage.removeItem(jet.attr('data-itemid'));
+      		jet.remove();
+      	})
+    </script>
+</body>
+</html>
