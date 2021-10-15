@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootstrap</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+ 		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Навигационная панель</a>
+		   	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		      	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        	<li class="nav-item dropdown">
+		          		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            	Выбрать
+		          		</a>
+				        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				        	<li><a class="dropdown-item" href="file:///C:/Users/user/Desktop/web/appleK/0.html#">Новая анкета</a></li>
+				            <li><hr class="dropdown-divider"></li>
+				            <li><a class="dropdown-item" href="file:///C:/Users/user/Desktop/web/appleK/index_main1.html">Прошлая анкета</a></li>
+				        </ul>
+		        	</li>
+		        </ul>
+		    </div>
+		</div>
+	</nav>
+	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+		    	<img src="https://img5.goodfon.ru/wallpaper/nbig/e/e6/noch-doroga-tuchi.jpg" class="d-block w-100" alt="первая">
+		    </div>
+		    <div class="carousel-item">
+		        <img src="https://img5.goodfon.ru/wallpaper/nbig/7/79/peizazh-priroda-vodopad-temnyi-fon-potok.jpg" class="d-block w-100" alt="вторая">
+		    </div>
+		    <div class="carousel-item">
+		        <img src="https://img5.goodfon.ru/wallpaper/nbig/6/5f/priroda-reka-ruchei-vodopad-les-derevia-zelionyi-fon.jpg" class="d-block w-100" alt="третья">
+		    </div>
+		    <div class="carousel-item">
+		        <img src="https://p4.wallpaperbetter.com/wallpaper/60/766/547/atmosphere-dark-forest-hill-wallpaper-preview.jpg" class="d-block w-100" alt="четвертая">
+		    </div>
+		    <div class="carousel-item">
+		        <img src="https://img3.akspic.ru/originals/3/5/6/4/2/124653-svet-atmosfera-derevo-ekosistema-temnota-1366x768.jpg" class="d-block w-100" alt="пятая">
+		    </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<header><h1 align="center">Анкета</h1></header>
+	<div class="parent" align="center">
+		<div class="vstack gap-3">
+			<p align="center">
+				<font size="4" face="Courier New"><b>Расскажите нам немного о себе, чтобы мы понимали, для кого создаём наши web-страницы.</b>
+				</font>
+			</p>
+			<form class="row g-3" name="anketa" method="post" action="#">
+				<div class="vstack gap-3">
+					<div class="row g-3">
+						<label for="FirstName" class="col-sm-2 col-form-label">Имя:</label>
+						<div class="col-sm-10">
+					    	<input type="text" class="form-control" placeholder="Введите имя" aria-label="Введите имя" id="FirstName">
+					  	</div>
+					  	<label for="LastName" class="col-sm-2 col-form-label">Фамилия:</label>
+					  	<div class="col-sm-10">
+					    	<input type="text" class="form-control" placeholder="Введите фамилию" aria-label="Введиите фамилию" id="LastName">
+						</div>
+					</div>
+					<div class="row mb-3">
+						<label for="InputEmail" class="col-sm-2 col-form-label">Почта:</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" id="InputEmail" placeholder="Введите эл.почту" aria-label="Введите эл.почту">
+						</div>
+					</div>
+					<fieldset class="row mb-3">
+						<legend class="col-form-label col-sm-2 pt-0">Пол:</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="Man" id="Man" value="option1">
+								<label class="form-check-label" for="Man">
+									Мужчина
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="Women" id="Women" value="option2">
+								<label class="form-check-label" for="Women">
+									Женщина
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="Somebody" id="Somebody" value="option3" checked>
+								<label class="form-check-label" for="Somebody">
+									Кто-то
+								</label>
+							</div>
+						</div>
+					</fieldset>			
+					<div class="input-group mb-3">
+						<label for="inputGroupSelect1" class="col-sm-2 col-form-label">Возраст:</label>
+						<div class="col-sm-10">
+							<select class="form-select" id="inputGroupSelect1">
+								<option selected>Выбрать...</option>
+								<option value="1">11-17</option>
+								<option value="2">18-24</option>
+								<option value="3">25-35</option>
+								<option value="4">36-45</option>
+								<option value="5">46-65</option>
+								<option value="6">66-86</option>
+							</select>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<label for="CheckForm" class="col-sm-2 col-form-label">Любимые фильмы:</label>
+						<div class="col-sm-10 offset-sm-2">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									фантастику
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									боевики
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									приключения
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									мелодрамы
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									документальные
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									ужастики
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<label for="TextArea" class="col-sm-2 col-form-label">Ваши интересы:</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" placeholder="Напишите здесь..." aria-label="Напишите здесь..." id="TextArea"></textarea>	
+						</div>	
+					</div>
+					<div class="position-relative">
+						<div class="position-absolute bottom-0 start-50 translate-middle-x">
+							<div class="row mb-3">
+								<div class="col-sm-10">
+									<button type="button" class="btn btn-outline-dark">Отправить</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
