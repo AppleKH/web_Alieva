@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JSX</title>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+	<script type="text/babel"> 
+    ReactDOM.render(
+        <h2>5 + 2 = {5 + 2}</h2>,
+        document.getElementById("app")
+    );
+
+	const user = {
+	        id : 5,
+	        age: 19,
+	        firstName: 'Хадижат',
+	        lastName: 'Алиева',
+	        getFullName: function(){ 
+	            return `${this.firstName} ${this.lastName}`;
+	        }
+	    };
+
+	const userClassName = "user-info";
+	    const styleObj = {
+	        color:'red', 
+	        fontFamily:'Verdana'
+	    };
+
+    ReactDOM.render(
+        <div className={userClassName}  style={styleObj}>
+                <p>Полное имя: {user.getFullName()}</p>
+                <p>Возраст: {user.age}</p>
+        </div>,
+        document.getElementById("fio")
+    );
+
+    class Hello extends React.Component {
+            render() {
+              return <h3>Привет, а это дополнительное задание</h3>;
+            }
+          }
+          ReactDOM.render(
+              <div style={{color:'navy', fontFamily:'Impact'}}><Hello /></div>,
+              document.getElementById("dop")
+          )
+   </script>
+   <div id="app"> </div>
+   <div id="fio"></div>
+   <div id="dop"></div>
+</body>
+</html>
