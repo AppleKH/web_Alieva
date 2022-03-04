@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Компилятор Babel</title>
+	<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+	<script type="text/babel">
+	    ReactDOM.render(
+	        <h2>Работа с Babel</h2>,
+	        document.getElementById("app")
+	    )
+
+	    function Hello() {
+		  	return <h3>Привет</h3>;
+		}
+
+		ReactDOM.render(
+            <div style={{color:'green', fontFamily:'Verdana'}}><Hello /></div>,
+            document.getElementById("container1")
+        )
+
+		class Hi extends React.Component {
+		  	render() {
+		    return <h3>Привет</h3>;
+		  	}
+		}
+
+		ReactDOM.render(
+            <div style={{color:'green', fontFamily:'Verdana'}}><Hi /></div>,
+            document.getElementById("container2")
+        )
+
+		var Hey =() => {
+		    return (<h3>Привет</h3>);
+		}
+
+		ReactDOM.render(
+            <div style={{color:'green', fontFamily:'Verdana'}}><Hey /></div>,
+            document.getElementById("container3")
+        )
+
+        class Dop extends React.Component {
+		  	constructor(){
+		  		super();
+		  		this.state = {
+		  			message: "дополнительное задание"
+		  		};
+		  	}
+
+		  	render() {
+		    return <h3>Это {this.state.message}</h3>;
+		  	}
+		}
+
+		ReactDOM.render(
+            <div style={{color:'navy', fontFamily:'Impact'}}><Dop /></div>,
+            document.getElementById("dop")
+        )
+
+		class Timer extends React.Component {
+			constructor(props) {
+			    super(props);
+			    this.state = { seconds: 0 };
+			}
+
+			tick() {
+				this.setState(state => ({
+			    	seconds: state.seconds + 1
+			    }));
+			}
+
+			componentDidMount() {
+				this.interval = setInterval(() => this.tick(), 1000);
+			}
+
+			componentWillUnmount() {
+				clearInterval(this.interval);
+			}
+
+			render() {
+			    return (
+			    	<div>Seconds: {this.state.seconds}</div>
+			    );
+			}
+		}
+
+		ReactDOM.render(
+			<Timer />, document.getElementById('timer-example')
+		);        
+	</script>
+	<div id="app"></div>
+	<div id="container1"></div>
+	<div id="container2"></div>
+	<div id="container3"></div>
+	<div id="dop"></div>
+	<div id="timer-example"></div>
+</body>
+</html>
